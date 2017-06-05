@@ -7,3 +7,5 @@ and the discovery of [this thread](https://codegolf.stackexchange.com/questions/
 Built with create-react-app and semantic-ui-react
 
 Open Source is awesome, even if our president is not.
+
+[Live Site](http://covfefe.johnderr.net)
