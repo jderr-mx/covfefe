@@ -7,13 +7,13 @@ const Covfefe = () => {
 
   return (
     <div className="max-w rounded overflow-hidden shadow-lg bg-white mb-4">
-      <div className="flex">
-        <div className="flex-1 p-4">
+      <div className="flex flex-wrap">
+        <div className="xl:w-1/2 lg:w-1/2 w-full p-4">
           <label className="block text-gray-700">Enter some text to covfefe</label>
           <textarea className="shadow appearance-none border rounded w-full mb-4 h-64 resize-none text-gray-700 p-1" onChange={e => updateMyText(e.target.value)} defaultValue={myText} />
-          <div className="h-64 italic text-gray-700">{covfefeThis(myText)}</div>
+          <div className="italic text-gray-700 h-64">{covfefeThis(myText)}</div>
         </div>
-        <div className="flex-1 p-4">
+        <div className="xl:w-1/2 lg:w-1/2 w-full p-4">
           <img src={UncleJoe}/>
         </div>
       </div>
