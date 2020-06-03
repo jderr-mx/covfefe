@@ -1,75 +1,51 @@
-import React, { Component } from 'react';
-import { Card, Divider, Header, Icon, Image, Label } from 'semantic-ui-react';
-import { ShareButtons } from 'react-share';
-import UncleJoe from './uncle_joe.jpg';
+import React, { useState } from 'react';
 import _ from 'lodash';
+import UncleJoe from './uncle_joe.jpg';
 
+const Covfefe = () => {
+  const [myText, updateMyText] = useState('Coverage');
 
-class Covfefe extends Component {
+  return (
+    <div className="max-w rounded overflow-hidden shadow-lg bg-white mb-4">
+      <div className="flex flex-wrap">
+        <div className="xl:w-1/2 lg:w-1/2 w-full p-4">
+          <label className="block text-gray-700">Enter some text to covfefe</label>
+          <textarea className="shadow appearance-none border rounded w-full mb-4 h-64 resize-none text-gray-700 p-1" onChange={e => updateMyText(e.target.value)} defaultValue={myText} />
+          <div className="italic text-gray-700 h-64">{covfefeThis(myText)}</div>
+        </div>
+        <div className="xl:w-1/2 lg:w-1/2 w-full p-4">
+          <img src={UncleJoe}/>
+        </div>
+      </div>
+    </div>
+  );
+};
+//          <label>Your Text on Covfefe</label>
+//          <div>{covfefeThis(myText)}</div>
 
-  constructor(props) {
-    super(props);
-    this.state = { someText: 'Coverage'}
-    this.updateCovfefe = this.updateCovfefe.bind(this);
-  }
-
-  updateCovfefe(e) {
-    e.preventDefault();
-    this.setState({ someText: e.target.value});
-  }
-  render() {
-    return(
-      <Card fluid centered={true}>
-        <Image src={UncleJoe} />
-        <Card.Content>
-          <Header size='small'>
-            Your Text
-          </Header>
-          <textarea onChange={this.updateCovfefe} defaultValue={this.state.someText} />
-          <Divider />
-          <Header size='small'>
-            Your Text on Covfefe
-          </Header>
-          <textarea readOnly="true" value={covfefeThis(this.state.someText)} />
-          <TwitterShareButton url="localhost" title={covfefeThis(this.state.someText)} hashtags={['CovfefeThis!']}>
-            <Label as='a' color='blue'>
-              <Icon name='twitter' />Tweet
-            </Label>
-          </TwitterShareButton>
-        </Card.Content>
-      </Card>
-    )
-  }
-}
-
-const f = (s) => {
+const f = s => {
   let results = s.match`(.*?[aeiouy]+(.)).*?([aeiouy])`;
-  if(results === null) {
+  if (results === null) {
     return '';
   }
-  let [,a,b,c] = results;
+  let [, a, b, c] = results;
 
-  return a+(b=(a="bcdfgszkvtgp")[11-a.search(b)]||b)+c+b+c;
-}
+  return a + (b = (a = 'bcdfgszkvtgp')[11 - a.search(b)] || b) + c + b + c;
+};
 
-
-const covfefeThis = (text) => {
-
+const covfefeThis = text => {
   let results = text.match(/\S+\s*/g);
-  return _
-    .chain(results)
-    .map((value) => {
+  return _.chain(results)
+    .map(value => {
       return f(value) || value;
     })
     .reduce((value, v) => {
-      if(!value)
-        return `${v.trim()}`;
-      else
-        return `${value} ${v.trim()}`;
+      if (!value) return `${v.trim()}`;
+      else return `${value} ${v.trim()}`;
     }, '')
     .value();
-}
+};
 
-const { TwitterShareButton } = ShareButtons;
+// const { TwitterShareButton } = ShareButtons;
 
 export default Covfefe;
