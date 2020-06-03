@@ -1,15 +1,13 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import UncleJoe from './uncle_joe.jpg';
 import './app.css';
 
 import Covfefe from './Covfefe';
 
 const App = () => {
   return(
-    <Fragment>
+    <div>
       <Covfefe />
-      <img src={UncleJoe}/>
         <p>
           Credit to <a href='https://codegolf.stackexchange.com/questions/123685/covfefify-a-string'>this thread</a> from the <a href='codegolf.stackoverflow.com'>codegolf</a> section of stackoverflow for the regex to covfefiy a string.
         </p>
@@ -21,7 +19,7 @@ const App = () => {
         <p>
           Open Source is awesome, even if our president sucks.
         </p>
-    </Fragment>
+    </div>
   );
 };
 

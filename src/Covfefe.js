@@ -1,19 +1,27 @@
-import React, { Component, Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
-
+import UncleJoe from './uncle_joe.jpg';
 
 const Covfefe = () => {
   const [myText, updateMyText] = useState('Coverage');
 
   return (
-    <Fragment>
-      <p>Your Text</p>
-      <textarea onChange={e => updateMyText(e.target.value)} defaultValue={myText} />
-      <p>Your Text on Covfefe</p>
-      <textarea readOnly={true} value={covfefeThis(myText)} />
-    </Fragment>
+    <div className="max-w rounded overflow-hidden shadow-lg bg-white mb-4">
+      <div className="flex">
+        <div className="flex-1 p-4">
+          <label className="block text-gray-700">Enter some text to covfefe</label>
+          <textarea className="shadow appearance-none border rounded w-full mb-4 h-64 resize-none text-gray-700 p-1" onChange={e => updateMyText(e.target.value)} defaultValue={myText} />
+          <div className="h-64 italic text-gray-700">{covfefeThis(myText)}</div>
+        </div>
+        <div className="flex-1 p-4">
+          <img src={UncleJoe}/>
+        </div>
+      </div>
+    </div>
   );
 };
+//          <label>Your Text on Covfefe</label>
+//          <div>{covfefeThis(myText)}</div>
 
 const f = s => {
   let results = s.match`(.*?[aeiouy]+(.)).*?([aeiouy])`;
