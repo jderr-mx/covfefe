@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import './app.css';
 
+import GitHub from './github-brands.svg';
 import Covfefe from './Covfefe';
 
 const App = () => {
@@ -13,11 +14,13 @@ const App = () => {
       </p>
       <div className='mt-4'>
         <b>Built with:</b>
-        <ul>
+        <ul className="mb-4">
           <li>React</li>
           <li>Tailwind CSS</li>
           <li>Parcel</li>
         </ul>
+        <b>Repo</b>
+        <a href='https://github.com/jderr-mx/covfefe'><img alt="Link to repo" className='w-8 h-8' src={GitHub}/></a>
       </div>
     </div>
   );

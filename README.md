@@ -6,4 +6,4 @@ and the discovery of [this thread](https://codegolf.stackexchange.com/questions/
 
 Built with React, Tailwindcss and Parcel
 
-[Live Site](http://covfefe.johnderr.net)
+[Live Site](https://covfefe.coffeeintocode.com)
