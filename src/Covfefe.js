@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Card, Divider, Header, Icon, Image, Label } from 'semantic-ui-react';
-import { ShareButtons } from 'react-share';
-import UncleJoe from './uncle_joe.jpg';
+import React, { Component, Fragment } from 'react';
+// import { ShareButtons } from 'react-share';
+// import UncleJoe from './uncle_joe.jpg';
 import _ from 'lodash';
 
 
@@ -19,25 +18,20 @@ class Covfefe extends Component {
   }
   render() {
     return(
-      <Card fluid centered={true}>
-        <Image src={UncleJoe} />
-        <Card.Content>
-          <Header size='small'>
-            Your Text
-          </Header>
-          <textarea onChange={this.updateCovfefe} defaultValue={this.state.someText} />
-          <Divider />
-          <Header size='small'>
-            Your Text on Covfefe
-          </Header>
-          <textarea readOnly="true" value={covfefeThis(this.state.someText)} />
+      <Fragment>
+        //<Image src={UncleJoe} />
+        <p>Your Text</p>
+        <textarea onChange={this.updateCovfefe} defaultValue={this.state.someText} />
+        <p>Your Text on Covfefe</p>
+        <textarea readOnly="true" value={covfefeThis(this.state.someText)} />
+          /**
           <TwitterShareButton url="localhost" title={covfefeThis(this.state.someText)} hashtags={['CovfefeThis!']}>
             <Label as='a' color='blue'>
               <Icon name='twitter' />Tweet
             </Label>
           </TwitterShareButton>
-        </Card.Content>
-      </Card>
+          */
+      </Fragment>
     )
   }
 }
@@ -70,6 +64,6 @@ const covfefeThis = (text) => {
     .value();
 }
 
-const { TwitterShareButton } = ShareButtons;
+// const { TwitterShareButton } = ShareButtons;
 
 export default Covfefe;
